@@ -13,3 +13,5 @@ Install TWIG untuk frontendnya https://symfony.com/doc/current/quick_tour/flex_r
 Sumber datanya berupa file json untuk <a href="https://github.com/qyraananda/makansiang/tree/master/src/App/Recipe">Recipe</a>
 dan <a href="https://github.com/qyraananda/makansiang/tree/master/src/App/Ingredient">Ingredients</a>
 
+<h2>Screenshot</h2>
+<img src="https://github.com/qyraananda/makansiang/blob/master/screen.png">
