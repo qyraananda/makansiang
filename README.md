@@ -9,5 +9,6 @@ Install Symfony micro framework (https://symfony.com/doc/current/setup.html).
 
 Install TWIG untuk frontendnya https://symfony.com/doc/current/quick_tour/flex_recipes.html.
 
-<h2>JSON DATA</h2>
-
+<h2>JSON Data</h2>
+Sumber datanya berupa file json untuk <a href="https://github.com/qyraananda/makansiang/tree/master/src/App/Recipe">Recipe</a>
+dan <a href="https://github.com/qyraananda/makansiang/tree/master/src/App/Ingridient">Ingredients</a>
