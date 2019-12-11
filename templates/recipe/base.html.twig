@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Lunch Ingredient!{% endblock %}</title>
+        {% block stylesheets %}{% endblock %}
+        	<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+        	<script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+        	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+    </head>
+    <body>
+        {% block body %}{% endblock %}
+        {% block javascripts %}{% endblock %}
+        
+        <h1>Sudah waktunya makan siang. Pilih menu masakan dibawah ini</h1>
+		{# {% set data = [dump(resep)] %} #}
+
+		{# {{ resep | json_encode() | raw }} #}
+		{# {{ dump(resep) }} #}
+
+		<table id="example" class="display" style="width:100%">
+			<thead><tr><th>Menu</th><th>Bahan</th><th>Keterangan</th></tr></thead>
+	    	<tbody>
+
+		    {% for key, cartValue in resep %}
+		    	{% set myArray = bahan %}
+				
+		    	{% set ing = [cartValue["ingredients"] | json_encode() | raw] %}
+		        {# {% set ing = [dump(cartValue["ingredients"])] %} #}
+
+				<tr>
+		            <td>{{ cartValue["title"]}}</td>
+		            {% for key,value in ing %}
+		            	<td>
+		            		{{ value }}
+		           		</td>
+		           	{% endfor %}
+		        		<td>
+		        			{% for item in  cartValue.ingredients %}
+				                {% for elem in bahan %}
+							        {% if item == elem.title %} 
+							        	<strong>{{ item }} :</strong> best-before {{ elem["best-before"] }} ,use-by : {{ elem["use-by"] }} <br>
+							        {% endif %}
+							    {% endfor %} 
+				            {% endfor %}
+		        		</td>
+		     	
+				    
+				</tr>
+		     {% endfor %}  
+			</tbody>
+	    </table>
+
+
+<script type="text/javascript">
+    $(document).ready( function () {
+        $('#example').DataTable();
+    } );
+</script>
+    </body>
+</html>

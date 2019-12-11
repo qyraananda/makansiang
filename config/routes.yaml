@@ -1,0 +1,6 @@
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+app_fresh_recipes:
+    path: /app/recipe
+    controller: App\Controller\RecipeController::recipe
